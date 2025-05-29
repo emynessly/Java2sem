@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:student.properties"/>
+    <!--<bean id="student" scope="singleton"
+          class="com.example.springEducation.SmartBean"
+          init-method="onInit"
+          destroy-method="onDestroy">
+        <constructor-arg name="firstName" value="${student.firstName}"/>
+        <constructor-arg name="surname" value="${student.surname}"/>
+        <constructor-arg name="birthdate" value="${student.birthdate}"/>
+    </bean>
+
+    <bean id="axeBean" scope="prototype"
+          class="com.example.springEducation.Axe">
+        <constructor-arg value="false"/>
+    </bean>
+    <bean id="pickaxeBean" scope="prototype"
+          class="com.example.springEducation.Pickaxe">
+    </bean>
+    <bean id="swordBean" scope="prototype"
+          class="com.example.springEducation.Sword">
+    </bean>
+    <bean id="bowBean" scope="prototype"
+          class="com.example.springEducation.Bow">
+        <constructor-arg value="3"/>
+    </bean>-->
+
+    <bean id="weaponShowerBean"
+          class="com.example.springEducation.weaponShower">
+    </bean>
+</beans>

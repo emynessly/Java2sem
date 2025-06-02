@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https//thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Pickaxe form</title>
+</head>
+<body>
+    <h1>Pickaxe</h1>
+    <form th:method="patch" th:action="@{'/weapons/update/pickaxe/' + ${pickaxe.getName()}}"th:object="${pickaxe}">
+        <input type="hidden" name="type" value="axe">
+        <label for="name">Enter name for your pickaxe:</label><br>
+        <input type="text" id="name" required th:field="*{name}" th:value="${pickaxe.getName()}"><br>
+        <label for="damage">Pickaxe's damage:</label><br>
+        <input type="number" id="damage" required min="0" th:field="*{damage}" th:value="${pickaxe.getDamage()}">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

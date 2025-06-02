@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Weapon shower</title>
+    <style>
+        table{
+            border:2px solid black;
+        }
+        td:first-child{
+            border-right: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<h1>Main Data</h1>
+<table>
+    <tr>
+        <td>Name</td>
+        <td th:text="${weapon.getName()}"></td>
+    </tr>
+    <tr>
+        <td>Base damage</td>
+        <td th:text="${weapon.damage()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${weapon.getEffect()}"></td>
+        <td th:text="${weapon.Effect()}"></td>
+    </tr>
+</table>
+<button>
+    <a th:href="@{~/weapons}">Back to List</a>
+</button>
+<form th:method="delete" th:action="@{'/weapons/' + ${weapon.getName()}}">
+    <input type="submit" th:value="'Delete ' + ${weapon.getName()}">
+</form>
+<button>
+    <a th:href="@{'/weapons/update/' + ${weapon.getName()}}">Update Weapon</a>
+</button>
+</body>
+</html>

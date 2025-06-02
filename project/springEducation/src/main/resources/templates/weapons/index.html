@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Weapon List</title>
+</head>
+<body>
+    <h1>Crafting table</h1>
+    <div th:each="weapon : ${weapons}">
+      <a th:href="@{/weapons/{name}(name=${weapon.getName()})}" th:text="${weapon.getName()}">weapon name</a>
+    </div>
+    <button>
+        <a th:href="@{weapons/axe}">Craft an axe</a>
+    </button><br>
+    <button>
+        <a th:href="@{weapons/bow}">Craft a bow</a>
+    </button><br>
+    <button>
+        <a th:href="@{weapons/pickaxe}">Craft a pickaxe</a>
+    </button><br>
+    <button>
+        <a th:href="@{weapons/sword}">Craft a sword</a>
+    </button><br>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https//thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Bow Form</title>
+</head>
+<body>
+    <h1>Bow</h1>
+    <form th:method="POST" th:action="@{/weapons/bow}" th:object="${bow}">
+        <label for="name">Enter name for your bow:</label><br>
+        <input type="text" id="name" required th:field="*{name}"><br>
+        <label for="arrows">Amount of arrows:</label><br>
+        <input type="number" id="arrows" required min="0" th:field="*{arrows}"><br>
+        <label for="range">Bow's range:</label><br>
+        <input type="number" id="range" required min="0" th:field="*{range}"><br>
+        <label for="damage">Bow's damage:</label><br>
+        <input type="number" id="damage" required min="0" th:field="*{damage}">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

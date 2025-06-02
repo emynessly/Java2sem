@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https//thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Sword Form</title>
+</head>
+<body>
+    <h1>Sword</h1>
+    <form th:method="POST" th:action="@{/weapons/sword}" th:object="${sword}">
+        <label for="name">Enter name for your sword:</label><br>
+        <input type="text" id="name" required th:field="*{name}"><br>
+        <label for="damage">Sword's damage:</label><br>
+        <input type="number" id="damage" required min="0" th:field="*{damage}">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

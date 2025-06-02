@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https//thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Axe form</title>
+</head>
+<body>
+    <h1>Axe</h1>
+    <form th:method="patch" th:action="@{'/weapons/update/axe/' + ${axe.getName()}}"th:object="${axe}">
+        <input type="hidden" name="type" value="axe">
+        <label for="name">Enter name for your axe:</label><br>
+        <input type="text" id="name" required th:field="*{name}" th:value="${axe.getName()}"><br>
+        <label for="damage">Axe's damage:</label><br>
+        <input type="number" id="damage" required min="0" th:field="*{damage}" th:value="${axe.getDamage()}">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
